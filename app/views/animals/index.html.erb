@@ -1,0 +1,45 @@
+<div class="container">
+  <table class="table"> 
+    <thead>
+      <tr>
+        <th>
+          Nombre
+        </th>
+        <th>
+          Foto
+        </th>
+        <th>
+          Caracteriticas
+        </th>
+        <th>
+          Acciones
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @animales.each do |animal| %>
+        <tr>
+          <td>
+            <%= animal.nombre %>
+          </td>
+          <td>
+          </td>
+          <td>
+            <ol>
+              <% animal.caracteristicas.each do |c| %>
+                <li> 
+                  <%= c.titulo %>
+                </li>
+              <%end%>
+            </ol>
+          </td>
+          <td>
+            <%= link_to "Ver", animal_path(animal.id) %> 
+            <%= link_to "Eliminar", animal_path(animal.id), method: :delete %> 
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= render 'form' %>
+</div>

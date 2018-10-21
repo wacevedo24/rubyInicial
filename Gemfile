@@ -32,15 +32,33 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Adicionar la libreria de Bootstrap
+gem 'bootstrap-sass'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'devise'
+# Envio de Correos
+gem 'sendgrid-ruby'
+# Peticiones desde cualquier origen 
+gem 'rack-cors', require: 'rack/cors'
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'poltergeist'
+  gem 'jwt'
+  
 end
 
 group :development do
@@ -59,6 +77,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+
 end
 
 group :production do
